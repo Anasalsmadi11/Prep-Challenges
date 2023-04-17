@@ -24,7 +24,7 @@
         {
             "language": "javascript",
             "source": [
-                "https://www.hackerrank.com/challenges/birthday-cake-candles/problem?isFullScreen=true"
+                "function birthdayCakeCandles(candles) {\n    // Write your code here\nlet highestNum = Math.max(...candles);\n// console.log(...caandles)\nlet highValue = candles.filter((el) => el ===highestNum)\nreturn highValue.length;\n}"
             ],
             "outputs": []
         },
