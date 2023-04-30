@@ -105,6 +105,21 @@ const cvsFiltration = (arr) => {
 
 const vowelsFiltration = (arr) => {
     // write your code here
+    let filterd= arr.filter(function(el){
+        
+        for(let i=0;i<el.length;i++){
+
+        }
+        let newArr=[]
+        let regex = /[a o u i e]/g
+        // let result = el.match(regex)
+        let result =regex.test(el)
+        if(!result){
+            arr.push(el)
+            return arr
+        }
+})
+return filterd
 } 
 // -------------------------------------------------------------------------------------------------------
 
