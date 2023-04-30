@@ -78,14 +78,16 @@ const cvsFiltration = (arr) => {
     let newArr = []
     let fullName;
     let filteredCv = arr.filter(function (el) {
-        el.firstName === null ? fullName = el.LastName : el.LastName === null ? fullName = el.firstName : fullName = `${el.firstName} ${el.LastName}`
         console.log(fullName)
-      if (el.yearsOfExperience > 4 && el.tech == "JS") {
-        return {fullName: fullName,tech: el.tech}
-        // console.log(el)
-      }
-    //   return newArr
-    return el
+        if (el.yearsOfExperience > 4 && el.tech == "JS") {
+            return el
+            
+        }
+    }).map(function(el){
+        el.firstName === null ? fullName = el.LastName : el.LastName === null ? fullName = el.firstName : fullName = `${el.firstName} ${el.LastName}`
+        // console.log(fullName)
+    el={fullName: fullName,tech: el.tech}
+        return el
     })
     return filteredCv
 }
