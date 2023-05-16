@@ -24,7 +24,7 @@
         {
             "language": "javascript",
             "source": [
-                ""
+                "if (Math.abs(s.length - t.length) > k) {\n    return \"No\";\n  }\n\n  const charCount = {};\n  const alphabetLength = 26;\n\n  for (let i = 0; i < s.length; i++) {\n    const diff = (t[i] - s[i] + alphabetLength) % alphabetLength;\n    if (diff > 0) {\n      if (charCount[diff]) {\n        charCount[diff]++;\n      } else {\n        charCount[diff] = 1;\n      }\n    }\n  }\n\n  let moves = 0;\n  for (let diff in charCount) {\n    const count = charCount[diff];\n    const maxMoves = parseInt(diff) + (count - 1) * alphabetLength;\n    if (maxMoves > k) {\n      return \"No\";\n    }\n    moves = Math.max(moves, maxMoves);\n  }\n\n  return moves <= k ? \"Yes\" : \"No\";\n"
             ],
             "outputs": []
         },
